@@ -34,4 +34,4 @@
 
 (setq use-package-keywords (insert-after use-package-keywords :requires :github))
 
-(provide 'use-package-sources)
+(provide 'use-package-ext)
