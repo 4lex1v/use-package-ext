@@ -20,9 +20,6 @@
              (`((,repo . ,out) . ,_) (list repo out nil))
              (`(,repo) (list repo nil nil)))))
 
-(defun if-nil-then (arg then)
-  (if (not arg) then arg))
-
 (defun use-package-normalize/:github (package-name-s keyword args)
   (when (> (length args) 2)
     (use-package-error ":github accepts no more then two args"))
@@ -32,7 +29,7 @@
        (if (cl-search "/" (symbol-name repo))
            (symbol-name repo)
          (format "%s/%s.el" repo package-name-s))
-       (if-nil-then out-folder use-package-sources-cache-folder)
+       (if out-folder out-folder use-package-sources-cache-folder)
        asyncp))))
 
 (defun use-package-handler/:github (package-name-s keyword config rest state)
