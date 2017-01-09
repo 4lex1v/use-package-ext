@@ -1,3 +1,5 @@
+;;; -*- lexical-bindings: t -*-
+
 (require 'use-package)
 (require 'deferred)
 
